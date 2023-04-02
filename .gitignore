@@ -1,0 +1,120 @@
+# General
+.DS_Store
+*.swp
+*.bak
+*.tmp
+*~
+*.lib
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.pdb
+*.mdb
+*.ipch
+*.pch
+*.idb
+*.class
+*.suo
+*.sdf
+*.opensdf
+*.ldf
+*.ilk
+*.aps
+*.ncb
+*.sbr
+*.tlh
+*.tli
+*.obj
+*.asm
+*.aspx.cs
+*.aspx.designer.cs
+*.resx
+*.licx
+*.resources
+*.cache
+*.mbox
+*.bsc
+*.lo
+*.la
+*.exp
+*.res
+*.exe
+*.out
+*.app
+*.iobj
+*.ipdb
+*.def
+*.log
+*.pyc
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# Flutter/Dart/Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+.packages
+
+# Android
+/android/app/build/
+/android/app/src/main/assets/flutter_assets/
+/android/local.properties
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# iOS
+/ios/.generated/
+/ios/Flutter/app_framework_info.plist
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Flutter.podspec
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/app.flx
+/ios/Flutter/flutter_assets/
+/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/
+/ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+/ios/Runner.xcodeproj/xcshareddata/
+/ios/Runner.xcodeproj/xcuserdata/
+/ios/Runner.xcworkspace/contents.xcworkspacedata
+/ios/Runner.xcworkspace/xcshareddata/
+/ios/Runner.xcworkspace/xcuserdata/
+
+# VS Code
+.vscode/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Xcode
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcuserstate
+
+# Sensitive information
+# You can add any sensitive files, API keys or config files here
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
