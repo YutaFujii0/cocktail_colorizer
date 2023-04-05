@@ -45,5 +45,9 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+    <string>App needs access to save photos to your gallery</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App needs access to your photo gallery for saving processed images</string>
 </dict>
 </plist>

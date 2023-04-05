@@ -14,7 +14,7 @@ class ImageProcessor {
     }
   }
 
-  Future<img.Image> processImage(XFile imageFile) async {
+  Future<Uint8List> processImage(XFile imageFile) async {
     print('processImage() is called!');
     // Load the image
     Uint8List imageData = await imageFile.readAsBytes();
@@ -30,6 +30,8 @@ class ImageProcessor {
 
     // Return the processed image
     print('processImage() is returning!');
-    return originalImage;
+
+    final pngBytes = img.encodePng(originalImage);
+    return Uint8List.fromList(pngBytes);
   }
 }

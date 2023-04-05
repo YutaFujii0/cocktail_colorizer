@@ -1,7 +1,8 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image/image.dart' as img;
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'image_processor.dart';
 import 'photo_manager.dart';
 
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   final PhotoManager _photoManager = PhotoManager();
   final ImageProcessor _imageProcessor = ImageProcessor();
   XFile? _photo;
-  img.Image? _processedImage;
+  Uint8List? _processedImage;
 
   Future<void> _takePhoto() async {
     XFile? photo = await _photoManager.takePhoto();
@@ -50,7 +51,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _processImage(XFile photo) async {
-    img.Image processedImage = await _imageProcessor.processImage(photo);
+    Uint8List processedImage = await _imageProcessor.processImage(photo);
+    await ImageGallerySaver.saveImage(processedImage);
     setState(() {
       _processedImage = processedImage;
     });
