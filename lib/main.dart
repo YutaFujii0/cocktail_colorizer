@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:image/image.dart' as img;
+import 'image_processor.dart';
 import 'photo_manager.dart';
 
 void main() {
@@ -23,7 +25,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final PhotoManager _photoManager = PhotoManager();
+  final ImageProcessor _imageProcessor = ImageProcessor();
   XFile? _photo;
+  img.Image? _processedImage;
 
   Future<void> _takePhoto() async {
     XFile? photo = await _photoManager.takePhoto();
@@ -31,6 +35,7 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _photo = photo;
       });
+      _processImage(photo);
     }
   }
 
@@ -40,7 +45,21 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _photo = photo;
       });
+      _processImage(photo);
     }
+  }
+
+  Future<void> _processImage(XFile photo) async {
+    img.Image processedImage = await _imageProcessor.processImage(photo);
+    setState(() {
+      _processedImage = processedImage;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _imageProcessor.loadModel();
   }
 
   @override
